@@ -12,7 +12,7 @@ group_id=`aws ec2 describe-security-groups --filters "Name=group-name,Values=$sg
 
 printf '* Network interfaces where this SG is attached to:\n'
 aws ec2 describe-network-interfaces --filter "Name=group-name,Values=$sg_name" | \
-    jq --raw-output '.NetworkInterfaces[] | \
+    jq --raw-output '.NetworkInterfaces[] |
     [if .Attachment.InstanceId
     then .Attachment.InstanceId
     else .Attachment.InstanceOwnerId
