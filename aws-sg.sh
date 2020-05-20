@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# usage: aws-sg.sh my-security-group-name (NAME, not ID)
+# usage: aws-sg.sh security-group-name (NAME, not ID)
 
 # shows where an specific AWS SG is being used
 # requires aws-cli and jq
