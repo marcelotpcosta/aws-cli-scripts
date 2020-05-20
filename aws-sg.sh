@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
+# usage: aws-sg.sh my-security-group-name (NAME, not ID)
+
 # shows where an specific AWS SG is being used
 # requires aws-cli and jq
 # + lists network interfaces where provided SG is attached to
 # + lists other security groups where SG is referenced
-# usage: aws-sg.sh my-security-group-name (NAME, not ID)
 
 sg_name=$1
 group_id=`aws ec2 describe-security-groups --filters "Name=group-name,Values=$sg_name" | \
