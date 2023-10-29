@@ -1,6 +1,6 @@
 eval `ssh-agent -s`
 
-ssh-add ~/work/marcelotpcosta
+ssh-add ~/work/cred/marcelotpcosta
 sleep 1
 
 git add *
