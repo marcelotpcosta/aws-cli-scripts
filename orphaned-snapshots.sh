@@ -1,0 +1,2 @@
+ORPHANED_SNAPSHOT_IDS=$(comm -23 <(aws ec2 describe-snapshots --owner-ids self --query 'Snapshots[?StartTime<=`2022-06-20`].SnapshotId' --output text | tr '\t' '\n' | sort) <(aws ec2 describe-images --filters Name=state,Values=available --owners self --query "Images[*].BlockDeviceMappings[*].Ebs.SnapshotId" --output text | tr '\t' '\n' | sort | uniq))
+for snap in $ORPHANED_SNAPSHOT_IDS; do aws ec2 delete-snapshot --snapshot-id $snap; done

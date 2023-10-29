@@ -1,0 +1,1 @@
+aws ec2 describe-images --owners self --query 'Images[?CreationDate <=`2022-06-20`].ImageId' > images-to-delete.txt
