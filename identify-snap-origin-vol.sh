@@ -1,6 +1,6 @@
 #!/bin/bash
 
-snapshot_id="snap-0588101e5553b6cac"
+snapshot_id="SNAP ID"
 
 # Obtém informações sobre o snapshot
 snapshot_info=$(aws ec2 describe-snapshots --snapshot-ids $snapshot_id)

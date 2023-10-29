@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ID da instância EC2
-instance_id="i-cba48546"
+instance_id="AAAAAAA"
 
 # Obter o ID da interface de rede associada à instância EC2
 network_interface_id=$(aws ec2 describe-instances --instance-ids $instance_id --query "Reservations[0].Instances[0].NetworkInterfaces[0].NetworkInterfaceId" --output text)
